@@ -1,6 +1,7 @@
+# -*- coding: utf-8 -*-
+
 require 'narray'
 include NMath
-
 module Lanczos
 
   #############
@@ -24,11 +25,11 @@ module Lanczos
     return sinc
   end
 
-  # Lanczos weight function; wk
+  # Lanczos weight function
   #
   # 入力
   #   - fc (Float) : cut-off(or cut-in) frequency
-  #   - n (Integer) : weight number
+  #   - n (Integer) : number of weights
   # 出力
   #   - w (NArray) : weight function
   def weight_f(fc,n)
@@ -45,12 +46,12 @@ module Lanczos
     return w
   end
 
-  # Lanczos band-pass filter's weight function; wk
+  # Lanczos band-pass weight function
   #
   # 入力
   #   - fc1 (Float) : cut-in frequency
   #   - fc2 (Float) : cut-off frequency
-  #   - n (Integer) : weight number
+  #   - n (Integer) : number of weights
   # 出力
   #   - w (NArray) : weight function
   def weight_f_bp(fc1,fc2,n)
@@ -70,7 +71,7 @@ module Lanczos
     return w
   end
 
-  # Lanczos Response function; R(f)
+  # Lanczos Response function
   #
   # 入力
   #   - w (NArray) : weight function
@@ -91,43 +92,43 @@ module Lanczos
 
 #########
 
-  # Lanczos Band-Pass Filter
+  # Lanczos Band-Pass Response Function
   #
   # 入力
   #   - f (NArray) : sequence of frequencies
   #   - fc1 (Float) : cut-in frequency
   #   - fc2 (Float) : cut-off frequency
-  #   - n (Integer) : weight number
+  #   - n (Integer) : number of weights
   # 出力
-  #   - r (NArray) : response function
+  #   - r (NArray) : band-pass response function
   def bp_filter( f, fc1, fc2, n )
     w = Lanczos::weight_f_bp( fc1, fc2, n )
     r = Lanczos::res_f( w, f )
     return r
   end
 
-  # Lanczos Low-Pass Filter
+  # Lanczos Low-Pass Response Function
   #
   # 入力
   #   - f (NArray) : sequence of frequencies
   #   - fc2 (Float) : cut-off frequency
-  #   - n (Integer) : weight number
+  #   - n (Integer) : number of weights
   # 出力
-  #   - r (NArray) : response function
+  #   - r (NArray) : low-pass response function
   def low_filter( f, fc2, n )
     w = Lanczos::weight_f( fc2, n )
     r = Lanczos::res_f( w, f )
     return r
   end
 
-  # Lanczos High-Pass Filter
+  # Lanczos High-Pass Response Function
   #
   # 入力
   #   - f (NArray) : sequence of frequencies
   #   - fc1 (Float) : cut-in frequency
-  #   - n (Integer) : weight number
+  #   - n (Integer) : number of weights
   # 出力
-  #   - r (NArray) : response function
+  #   - r (NArray) : high-pass response function
   def high_filter( f, fc1, n )
     w = Lanczos::weight_f( fc1, n )
     r = 1-Lanczos::res_f( w, f )
