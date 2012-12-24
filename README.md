@@ -40,6 +40,7 @@ Lanczosフィルターに関するライブラリです。
 主な関数は次のようになっています。
 
 -- Lanczos::weight_f( fc , n )
+
     Return a weight function of a low-pass filter
 
     ARGUMENTS
