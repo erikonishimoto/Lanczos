@@ -130,8 +130,7 @@ NArray版 虚数単位 i (長さ1の配列)
         <a name="M000005"></a>
 
         <div class="method-heading">
-          <a href="Lanczos.src/M000005.html" target="Code" class="method-signature"
-            onclick="popupCode('Lanczos.src/M000005.html');return false;">
+          <a href="#M000005" class="method-signature">
           <span class="method-name">bp_filter</span><span class="method-args">( f, fc1, fc2, n )</span>
           </a>
         </div>
@@ -155,6 +154,18 @@ NArray版 虚数単位 i (長さ1の配列)
 <pre>
   - r (NArray) : band-pass response function
 </pre>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000005-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000005-source">
+<pre>
+     <span class="ruby-comment cmt"># File Lanczos.rb, line 104</span>
+104:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">bp_filter</span>( <span class="ruby-identifier">f</span>, <span class="ruby-identifier">fc1</span>, <span class="ruby-identifier">fc2</span>, <span class="ruby-identifier">n</span> )
+105:     <span class="ruby-identifier">w</span> = <span class="ruby-constant">Lanczos</span><span class="ruby-operator">::</span><span class="ruby-identifier">weight_f_bp</span>( <span class="ruby-identifier">fc1</span>, <span class="ruby-identifier">fc2</span>, <span class="ruby-identifier">n</span> )
+106:     <span class="ruby-identifier">r</span> = <span class="ruby-constant">Lanczos</span><span class="ruby-operator">::</span><span class="ruby-identifier">res_f</span>( <span class="ruby-identifier">w</span>, <span class="ruby-identifier">f</span> )
+107:     <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">r</span>
+108:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
         </div>
       </div>
 
@@ -162,8 +173,7 @@ NArray版 虚数単位 i (長さ1の配列)
         <a name="M000007"></a>
 
         <div class="method-heading">
-          <a href="Lanczos.src/M000007.html" target="Code" class="method-signature"
-            onclick="popupCode('Lanczos.src/M000007.html');return false;">
+          <a href="#M000007" class="method-signature">
           <span class="method-name">high_filter</span><span class="method-args">( f, fc1, n )</span>
           </a>
         </div>
@@ -186,6 +196,18 @@ NArray版 虚数単位 i (長さ1の配列)
 <pre>
   - r (NArray) : high-pass response function
 </pre>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000007-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000007-source">
+<pre>
+     <span class="ruby-comment cmt"># File Lanczos.rb, line 132</span>
+132:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">high_filter</span>( <span class="ruby-identifier">f</span>, <span class="ruby-identifier">fc1</span>, <span class="ruby-identifier">n</span> )
+133:     <span class="ruby-identifier">w</span> = <span class="ruby-constant">Lanczos</span><span class="ruby-operator">::</span><span class="ruby-identifier">weight_f</span>( <span class="ruby-identifier">fc1</span>, <span class="ruby-identifier">n</span> )
+134:     <span class="ruby-identifier">r</span> = <span class="ruby-value">1</span><span class="ruby-operator">-</span><span class="ruby-constant">Lanczos</span><span class="ruby-operator">::</span><span class="ruby-identifier">res_f</span>( <span class="ruby-identifier">w</span>, <span class="ruby-identifier">f</span> )
+135:     <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">r</span>
+136:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
         </div>
       </div>
 
@@ -193,8 +215,7 @@ NArray版 虚数単位 i (長さ1の配列)
         <a name="M000006"></a>
 
         <div class="method-heading">
-          <a href="Lanczos.src/M000006.html" target="Code" class="method-signature"
-            onclick="popupCode('Lanczos.src/M000006.html');return false;">
+          <a href="#M000006" class="method-signature">
           <span class="method-name">low_filter</span><span class="method-args">( f, fc2, n )</span>
           </a>
         </div>
@@ -217,6 +238,18 @@ NArray版 虚数単位 i (長さ1の配列)
 <pre>
   - r (NArray) : low-pass response function
 </pre>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000006-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000006-source">
+<pre>
+     <span class="ruby-comment cmt"># File Lanczos.rb, line 118</span>
+118:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">low_filter</span>( <span class="ruby-identifier">f</span>, <span class="ruby-identifier">fc2</span>, <span class="ruby-identifier">n</span> )
+119:     <span class="ruby-identifier">w</span> = <span class="ruby-constant">Lanczos</span><span class="ruby-operator">::</span><span class="ruby-identifier">weight_f</span>( <span class="ruby-identifier">fc2</span>, <span class="ruby-identifier">n</span> )
+120:     <span class="ruby-identifier">r</span> = <span class="ruby-constant">Lanczos</span><span class="ruby-operator">::</span><span class="ruby-identifier">res_f</span>( <span class="ruby-identifier">w</span>, <span class="ruby-identifier">f</span> )
+121:     <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">r</span>
+122:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
         </div>
       </div>
 
@@ -224,8 +257,7 @@ NArray版 虚数単位 i (長さ1の配列)
         <a name="M000004"></a>
 
         <div class="method-heading">
-          <a href="Lanczos.src/M000004.html" target="Code" class="method-signature"
-            onclick="popupCode('Lanczos.src/M000004.html');return false;">
+          <a href="#M000004" class="method-signature">
           <span class="method-name">res_f</span><span class="method-args">(w,f)</span>
           </a>
         </div>
@@ -247,6 +279,24 @@ NArray版 虚数単位 i (長さ1の配列)
 <pre>
   - r (NArray) : response function
 </pre>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000004-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000004-source">
+<pre>
+    <span class="ruby-comment cmt"># File Lanczos.rb, line 81</span>
+81:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">res_f</span>(<span class="ruby-identifier">w</span>,<span class="ruby-identifier">f</span>)
+82:     <span class="ruby-identifier">n</span> = <span class="ruby-identifier">w</span>.<span class="ruby-identifier">length</span>
+83:     <span class="ruby-identifier">n_2</span> = (<span class="ruby-identifier">n</span><span class="ruby-operator">-</span><span class="ruby-value">1</span>)<span class="ruby-operator">/</span><span class="ruby-value">2</span>
+84:     <span class="ruby-identifier">k</span> = <span class="ruby-constant">NArray</span>.<span class="ruby-identifier">complex</span>(<span class="ruby-value">1</span>,<span class="ruby-identifier">n</span>).<span class="ruby-identifier">indgen!</span><span class="ruby-operator">-</span><span class="ruby-identifier">n_2</span> 
+85:     <span class="ruby-identifier">w</span> = <span class="ruby-identifier">w</span>.<span class="ruby-identifier">reshape</span>(<span class="ruby-value">1</span>,<span class="ruby-identifier">n</span>).<span class="ruby-identifier">to_type</span>(<span class="ruby-constant">NArray</span><span class="ruby-operator">::</span><span class="ruby-constant">COMPLEX</span>)
+86:     <span class="ruby-identifier">r</span> = (<span class="ruby-identifier">w</span><span class="ruby-operator">*</span><span class="ruby-constant">NMath</span><span class="ruby-operator">::</span><span class="ruby-identifier">exp</span>(<span class="ruby-constant">I</span><span class="ruby-operator">*</span><span class="ruby-value">2</span><span class="ruby-operator">*</span><span class="ruby-constant">PI</span><span class="ruby-operator">*</span><span class="ruby-identifier">f</span><span class="ruby-operator">*</span><span class="ruby-identifier">k</span>)).<span class="ruby-identifier">sum</span>(<span class="ruby-value">-1</span>)
+87:     <span class="ruby-comment cmt">#p &quot;r&quot;</span>
+88:     <span class="ruby-comment cmt">#p r</span>
+89: 
+90:     <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">r</span>
+91:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
         </div>
       </div>
 
@@ -254,8 +304,7 @@ NArray版 虚数単位 i (長さ1の配列)
         <a name="M000001"></a>
 
         <div class="method-heading">
-          <a href="Lanczos.src/M000001.html" target="Code" class="method-signature"
-            onclick="popupCode('Lanczos.src/M000001.html');return false;">
+          <a href="#M000001" class="method-signature">
           <span class="method-name">sinc</span><span class="method-args">(x)</span>
           </a>
         </div>
@@ -276,6 +325,21 @@ NArray版 虚数単位 i (長さ1の配列)
 <pre>
   - sinc (NArray)
 </pre>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000001-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000001-source">
+<pre>
+    <span class="ruby-comment cmt"># File Lanczos.rb, line 19</span>
+19:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">sinc</span>(<span class="ruby-identifier">x</span>)
+20:     <span class="ruby-identifier">n</span> = <span class="ruby-identifier">x</span>.<span class="ruby-identifier">length</span>
+21:     <span class="ruby-identifier">n_2</span> = (<span class="ruby-identifier">n</span><span class="ruby-operator">-</span><span class="ruby-value">1</span>)<span class="ruby-operator">/</span><span class="ruby-value">2</span>
+22: 
+23:     <span class="ruby-identifier">sinc</span>=<span class="ruby-constant">NMath</span><span class="ruby-operator">::</span><span class="ruby-identifier">sin</span>(<span class="ruby-constant">PI</span><span class="ruby-operator">*</span><span class="ruby-identifier">x</span>)<span class="ruby-operator">/</span>(<span class="ruby-constant">PI</span><span class="ruby-operator">*</span><span class="ruby-identifier">x</span>)
+24:     <span class="ruby-identifier">sinc</span>[<span class="ruby-identifier">n_2</span>]=<span class="ruby-value">1</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">x</span>[<span class="ruby-identifier">n_2</span>]<span class="ruby-operator">==</span><span class="ruby-value">0</span>
+25:     <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">sinc</span>
+26:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
         </div>
       </div>
 
@@ -283,8 +347,7 @@ NArray版 虚数単位 i (長さ1の配列)
         <a name="M000002"></a>
 
         <div class="method-heading">
-          <a href="Lanczos.src/M000002.html" target="Code" class="method-signature"
-            onclick="popupCode('Lanczos.src/M000002.html');return false;">
+          <a href="#M000002" class="method-signature">
           <span class="method-name">weight_f</span><span class="method-args">(fc,n)</span>
           </a>
         </div>
@@ -306,6 +369,26 @@ NArray版 虚数単位 i (長さ1の配列)
 <pre>
   - w (NArray) : weight function
 </pre>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000002-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000002-source">
+<pre>
+    <span class="ruby-comment cmt"># File Lanczos.rb, line 35</span>
+35:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">weight_f</span>(<span class="ruby-identifier">fc</span>,<span class="ruby-identifier">n</span>)
+36:     <span class="ruby-identifier">n</span> = <span class="ruby-identifier">n</span>.<span class="ruby-identifier">to_i</span>
+37:     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">n</span><span class="ruby-operator">%</span><span class="ruby-value">2</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
+38:       <span class="ruby-identifier">raise</span> <span class="ruby-value str">&quot;weights number need to be odd number!\n&quot;</span>
+39:     <span class="ruby-keyword kw">end</span>
+40:     <span class="ruby-identifier">n_2</span> = (<span class="ruby-identifier">n</span><span class="ruby-operator">-</span><span class="ruby-value">1</span>)<span class="ruby-operator">/</span><span class="ruby-value">2</span>
+41:     <span class="ruby-identifier">k</span> = <span class="ruby-constant">NArray</span>.<span class="ruby-identifier">sfloat</span>(<span class="ruby-identifier">n</span>).<span class="ruby-identifier">indgen!</span><span class="ruby-operator">-</span><span class="ruby-identifier">n_2</span>
+42: 
+43:     <span class="ruby-identifier">sigma</span> = <span class="ruby-identifier">sinc</span>(<span class="ruby-identifier">k</span><span class="ruby-operator">/</span><span class="ruby-identifier">n_2</span>)
+44:     <span class="ruby-identifier">w</span> = <span class="ruby-value">2.0</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">fc</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">sinc</span>(<span class="ruby-value">2.0</span><span class="ruby-operator">*</span><span class="ruby-identifier">fc</span><span class="ruby-operator">*</span><span class="ruby-identifier">k</span>) <span class="ruby-operator">*</span> <span class="ruby-identifier">sigma</span>
+45: 
+46:     <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">w</span>
+47:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
         </div>
       </div>
 
@@ -313,8 +396,7 @@ NArray版 虚数単位 i (長さ1の配列)
         <a name="M000003"></a>
 
         <div class="method-heading">
-          <a href="Lanczos.src/M000003.html" target="Code" class="method-signature"
-            onclick="popupCode('Lanczos.src/M000003.html');return false;">
+          <a href="#M000003" class="method-signature">
           <span class="method-name">weight_f_bp</span><span class="method-args">(fc1,fc2,n)</span>
           </a>
         </div>
@@ -337,6 +419,29 @@ NArray版 虚数単位 i (長さ1の配列)
 <pre>
   - w (NArray) : weight function
 </pre>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000003-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000003-source">
+<pre>
+    <span class="ruby-comment cmt"># File Lanczos.rb, line 57</span>
+57:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">weight_f_bp</span>(<span class="ruby-identifier">fc1</span>,<span class="ruby-identifier">fc2</span>,<span class="ruby-identifier">n</span>)
+58:     <span class="ruby-identifier">n</span> = <span class="ruby-identifier">n</span>.<span class="ruby-identifier">to_i</span>
+59:     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">n</span><span class="ruby-operator">%</span><span class="ruby-value">2</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
+60:       <span class="ruby-identifier">raise</span> <span class="ruby-value str">&quot;weights number need to be odd number!\n&quot;</span>
+61:     <span class="ruby-keyword kw">end</span>
+62:     <span class="ruby-identifier">n_2</span> = (<span class="ruby-identifier">n</span><span class="ruby-operator">-</span><span class="ruby-value">1</span>)<span class="ruby-operator">/</span><span class="ruby-value">2</span>
+63:     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">n_2</span> <span class="ruby-operator">&lt;</span> (<span class="ruby-value">1.3</span><span class="ruby-operator">/</span>(<span class="ruby-identifier">fc2</span><span class="ruby-operator">-</span><span class="ruby-identifier">fc1</span>)).<span class="ruby-identifier">to_i</span>
+64:       <span class="ruby-identifier">raise</span> <span class="ruby-value str">&quot;weights number need to be more than 2*1.3/(fc2-fc1)+1\n&quot;</span>
+65:     <span class="ruby-keyword kw">end</span>
+66: 
+67:     <span class="ruby-identifier">k</span> = <span class="ruby-constant">NArray</span>.<span class="ruby-identifier">sfloat</span>(<span class="ruby-identifier">n</span>).<span class="ruby-identifier">indgen!</span><span class="ruby-operator">-</span><span class="ruby-identifier">n_2</span>
+68:     <span class="ruby-identifier">sigma</span> = <span class="ruby-identifier">sinc</span>(<span class="ruby-identifier">k</span><span class="ruby-operator">/</span><span class="ruby-identifier">n_2</span>)
+69:     <span class="ruby-identifier">w</span> = <span class="ruby-value">2.0</span> <span class="ruby-operator">*</span> ( <span class="ruby-identifier">fc2</span><span class="ruby-operator">*</span><span class="ruby-identifier">sinc</span>(<span class="ruby-value">2.0</span><span class="ruby-operator">*</span><span class="ruby-identifier">fc2</span><span class="ruby-operator">*</span><span class="ruby-identifier">k</span>) <span class="ruby-operator">-</span> <span class="ruby-identifier">fc1</span><span class="ruby-operator">*</span><span class="ruby-identifier">sinc</span>(<span class="ruby-value">2.0</span><span class="ruby-operator">*</span><span class="ruby-identifier">fc1</span><span class="ruby-operator">*</span><span class="ruby-identifier">k</span>) ) <span class="ruby-operator">*</span> <span class="ruby-identifier">sigma</span>
+70: 
+71:     <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">w</span>
+72:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
         </div>
       </div>
 
