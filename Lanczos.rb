@@ -38,7 +38,7 @@ module Lanczos
       raise "weights number need to be odd number!\n"
     end
     n_2 = (n-1)/2
-    k = NArray.sfloat(n).indgen!-n_2
+    k = NArray.float(n).indgen!-n_2
 
     sigma = sinc(k/n_2)
     w = 2.0 * fc * sinc(2.0*fc*k) * sigma
@@ -60,11 +60,11 @@ module Lanczos
       raise "weights number need to be odd number!\n"
     end
     n_2 = (n-1)/2
-    if n_2 < (1.3/(fc2-fc1)).to_i
+    if n_2 < (1.3/(fc2-fc1)).ceil
       raise "weights number need to be more than 2*1.3/(fc2-fc1)+1\n"
     end
 
-    k = NArray.sfloat(n).indgen!-n_2
+    k = NArray.float(n).indgen!-n_2
     sigma = sinc(k/n_2)
     w = 2.0 * ( fc2*sinc(2.0*fc2*k) - fc1*sinc(2.0*fc1*k) ) * sigma
 
